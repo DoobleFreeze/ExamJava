@@ -11,8 +11,10 @@ class NewThread implements Runnable {
     public void run() {
         try {
             for (int i = 0; i <= 100; i++) {
-                System.out.println(i);
-                Thread.sleep(500);
+                if (i % 10 == 0) {
+                    System.out.println(i);
+                    Thread.sleep(500);
+                }
             }
         } catch (InterruptedException e) {
             System.out.println("Поток прерван.");
